@@ -7,6 +7,7 @@
 import { Link, Navigate } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext.jsx';
 import Login from '../pages/Login';
+import styles from "./Header.module.css";
 
 const Header = () => {
 
@@ -15,9 +16,9 @@ const Header = () => {
 
 
   return (
-    <header style={{ backgroundColor: "#4CAF50", padding: "10px",
-                     textAlign: "center", color: "white" }}>
-      <h1>Student Management System</h1>
+
+    <header className={styles.estiloGeneral}>
+      <h1>Librería on-line</h1>
       <div>
         {
           estaLogueado ?
