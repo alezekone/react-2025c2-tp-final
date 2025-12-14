@@ -23,7 +23,7 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
             nuevosErrores.precio = 'El precio debe ser mayor a cero.';
 
         if (!producto.imagen.trim() || producto.imagen.length < 6)
-            nuevosErrores.imagen = 'Se requiere URL de imagnen válida.';
+            nuevosErrores.imagen = 'Se requiere URL de imagen válida.';
 
         if (!producto.descripcion.trim() || producto.descripcion.length < 10)
             nuevosErrores.descripcion = 'La descripción debe tener al menos 10 caracteres.';
@@ -35,11 +35,12 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
 
     const handleSubmit = async (evento) => {
         evento.preventDefault();
+        /*
         if (!validarFormulario()) // Si no hay errores, validarFormulario() retorna true.
             return;           // =>  Si no hay errores, !validarFormulario() es false.
                               // =>  Si no hay errores, no hace el return y por tanto,
                               // continúa la ejecución de la función.
-
+        */
         // Si no hay errores, entonces:
         if (modo === "agregar") {
             await agregarProducto(producto);
@@ -47,18 +48,19 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
             await editarProducto(producto);
         }
         onCerrar();
-        }
+    };
 
-        onAgregar(productoAEnviar); /// ***** <-- Ver Admin.jsx ***** ///
+        // onAgregar(productoAEnviar); /// ***** <-- Ver Admin.jsx ***** ///
         // Limpiamos el formulario
+        /*
         setProducto({
             nombre: '',
             precio: '', 
             imagen: '',
             descripcion: ''
-        });
-        // Limpiamos los errores que puiera haber.
-        setErrores({});
+        });*/
+        // Limpiamos los errores que pudiera haber.
+        // setErrores({});   /// Viejo
     
 
 
@@ -75,17 +77,18 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
           <div className={styles.modalHeader}>
             <h3 className={styles.modalHeaderTitle}>
               {modo === "agregar" ? "Agregar Producto" : "Editar Producto"}
+              
             </h3>
             <button 
               type="button" 
               onClick={onCerrar}
               className={styles.closeButton}
             >
-              <X />
+              {/*<X />*/}Cerrar
             </button>
           </div>
           {/* Cuerpo del Modal */}
-          <form onSubmit={manejarSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className={styles.formGrid}>
               {/* Campo Nombre */}
               <div className={styles.colSpan2}>
@@ -99,7 +102,7 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
                   className={styles.formInputBase}
                   placeholder="Ingrese el nombre del producto"
                   value={producto.nombre || ""}
-                  onChange={manejarChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -115,7 +118,7 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
                   className={styles.formInputBase}
                   placeholder="$0.00"
                   value={producto.precio || ""}
-                  onChange={manejarChange}
+                  onChange={handleChange}
                   required
                   min="0"
                   step="any"
@@ -134,7 +137,7 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
                   className={styles.formInputBase}
                   placeholder="https://ejemplo.com/imagen.jpg"
                   value={producto.imagen || ""}
-                  onChange={manejarChange}
+                  onChange={handleChange}
                 />
               </div>
               {/* Campo Descripcion */}
@@ -149,7 +152,7 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
                   className={styles.formInputBase}
                   placeholder="Escriba la descripción del producto aquí"
                   value={producto.descripcion || ""}
-                  onChange={manejarChange}
+                  onChange={handleChange}
                   required
                 ></textarea>
               </div>
@@ -162,6 +165,7 @@ const FormularioProducto = ({ productoInicial = {}, modo = "agregar", onCerrar }
                 className={`${styles.btnBase} ${styles.btnPrimary}`}
               >
                 {modo === "agregar" ? <>Agregar</> : <>Actualizar</>}
+                
               </button>
               {/* Boton Secundario o de cancelar */}
               <button 

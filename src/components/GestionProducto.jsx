@@ -28,6 +28,7 @@ const GestionProductos = () => {
         setModoFormulario("agregar");
         setProductoSeleccionado(null);
         setMostrarFormulario(true);
+        console.log("Mostraré formulario para agregar producto");
     }
 
     // Abrir formulario para editar:
@@ -35,6 +36,7 @@ const GestionProductos = () => {
         setModoFormulario("editar");
         setProductoSeleccionado(producto);
         setMostrarFormulario(true);
+        console.log("Mostraré formulario para editar producto");
     }    
 
     // Cerrar el formulario:
@@ -113,20 +115,21 @@ const GestionProductos = () => {
                   </div>
 
                   {/* Botones de editar y eliminar */}
+                  {/*onClick={() => abrirFormularioEditar(producto)}*/}
                   <div className="flex gap-3 sm:shrink-0">
                     <button
                       onClick={() => abrirFormularioEditar(producto)}
                       className="flex items-center justify-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-md font-medium hover:bg-gray-800 transition-colors duration-200"
                     >
                       {/*<SquarePen className="w-4 h-4" />*/}
-                      <span className="text-sm">Editar2</span>
+                      <span className="text-sm">Editar</span>
                     </button>
                     <button
                       onClick={() => confirmarEliminar(producto)}
                       className="flex items-center justify-center bg-red-50 text-red-600 px-3 py-2 rounded-md hover:bg-red-100 transition-colors duration-200"
                     >
                       {/*<TrashIcon className="w-5 h-5" />*/}
-                      <span className="text-sm">Eliminar1</span>
+                      <span className="text-sm">Eliminar</span>
                     </button>
                   </div>
                 </div>
@@ -169,7 +172,7 @@ const GestionProductos = () => {
                 onClick={handleEliminar}
                 className="flex-1 px-4 py-2.5 bg-red-600 text-white rounded-md font-semibold hover:bg-red-700 transition-colors duration-200"
               >
-                Eliminar2
+                Eliminar
               </button>
             </div>
           </div>
