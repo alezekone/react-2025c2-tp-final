@@ -24,9 +24,9 @@ const Login = () => {
     
     return (
         <>
-            <h2>Login Page</h2>
+            <h1>Iniciar sesión</h1>
             <form onSubmit={handleSubmit}>
-                <h3>Iniciar Sesion</h3>
+                {/*<h3>Iniciar Sesion</h3>*/}
                 {/* htmlFor es de JSX y es equivalente a la palabra reservada "for" de los formularios HTML
                     y al mismo tiempo "for" es palabra resevada en JS. Considerando que JSX es HTML+JS, 
                     no es raro que no se pueda usar el "for" de HTML así no más acá. */}

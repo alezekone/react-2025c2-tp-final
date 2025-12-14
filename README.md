@@ -5,7 +5,11 @@ Front end en React de un sitio de e-commerce contra API en mockapi.io correspond
 El usuario con acceso al panel de administración es "admin", con contraseña "1234".
 
 ## Comentarios
-- Muy verde. En líneas generales, hay rutas protegidas, el CRUD "funciona", contexto de productos (además de Carrito y Auth), pero la integración de los formularios agregar y editar está en proceso y rompió el código. Sigo trabajando en ello.
+- En líneas generales, hay rutas protegidas, el CRUD funciona, están los contextos de Productos, Carrito y Auth. 
+- Falta hacer que el usuario deba registrarse para poder ingresar productos al carrito (actualmente los ingresa sin más). 
+- Hay un único usuario (admin) y uno debe loggearse como tal para ver su carrito (no debería ser así). 
+- Falta desarrollar el tema de estilos. Hay un poco con CSS Modules, otro poco con Tailwind CSS, no hay uniformidad ni mucho menos.
+- Muy verde, falta un montón. Sigo trabajando en ello.
 
 ## Nota
 Todos los commits previos para llegar a este punto pueden apreciarse en https://github.com/alezekone/react-2025c2-practicas.git

@@ -41,7 +41,7 @@ const ProductosConMockAPI = () => {
 
     return (
         <>
-            <h2>Productos desde https://mockapi.io</h2>
+            <h1>Productos {/*desde https://mockapi.io*/}</h1>
             <ul>
                 {producto.map(producto => (
                     <li key={producto.id}>

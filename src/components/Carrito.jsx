@@ -10,10 +10,14 @@ const Carrito = ({ productosEnCarrito, productosEliminados}) => {
             <h1>Carrito de Compras</h1>
             {carrito.map((producto, index) => 
                 <div key={index}>
-                    {/* Para FakeStoreAPI: title y price */}
-                    {/* <p>{producto.title}: {producto.price}</p> */}
-                    {/* Para MockAPI: nombre y precio */}
-                    <p>{producto.nombre}: {producto.precio}</p>
+            <p>{producto.nombre}</p>
+            <p>$ {producto.precio}</p>
+            <img className="mx-auto"
+                src={producto.imagen}
+                alt={producto.nombre}
+                height={100}
+                width={100} 
+            />
                     <button onClick={() => eliminarDelCarrito(index)}>Eliminar</button>
                 </div>
             )}

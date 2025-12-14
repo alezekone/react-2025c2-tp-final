@@ -16,6 +16,7 @@ const Nav = () => {
         <li><a href="#" style={{ color: "white", textDecoration: "none" }}>Contact</a></li>
         */}
         <li><Link to={'/'}>Inicio</Link></li>
+        <li><Link to={'/carrito'}>Carrito</Link></li>
         <li><Link to={'/contacto'}>Contacto</Link></li>
         {esAdmin && <li><Link to={'/admin'}>Admin</Link></li>}
       </ul>
