@@ -37,8 +37,15 @@ const DetalleProductoCompleto = () => {
 
     return (
         <>
-            <h2>Detalles del producto N° {id}</h2>
-            <p>Nombre: {producto.nombre}, precio: {producto.precio}</p>
+            <h1>Detalles del producto</h1>
+            <p>{producto.nombre}</p>
+            <p>$ {producto.precio}</p>
+            <img className="mx-auto"
+                src={producto.imagen}
+                alt={producto.nombre}
+                height={180}
+                width={180} 
+            />
             {/* Comento la próxima línea, la cual correspondia a FakeStoreAPI.io*/}
             {/* <p>Nombre: {producto.title}, precio: {producto.price}</p>*/}
         </>
