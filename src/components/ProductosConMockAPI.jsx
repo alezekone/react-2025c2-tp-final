@@ -51,7 +51,7 @@ const ProductosConMockAPI = () => {
                              height={80}
                              width={80} 
                         />
-                        <p>Descripcion: </p> 
+                        <p>Descripción: </p> 
                         <p>{producto.descripcion}</p>
                         <button onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
                         <Link to={`/producto-completo/${producto.id}`}>Ver detalle</Link>
