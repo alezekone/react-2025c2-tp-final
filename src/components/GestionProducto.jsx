@@ -46,6 +46,8 @@ const GestionProductos = () => {
     // Confirmar el borrado del producto
     const confirmarEliminar = (producto) => {
         setProductoAEliminar(producto);
+        console.log(`El producto a eliminar es ${{producto}}`);
+        console.log(producto);
     };
 
     const handleEliminar = () => {
@@ -124,7 +126,7 @@ const GestionProductos = () => {
                       className="flex items-center justify-center bg-red-50 text-red-600 px-3 py-2 rounded-md hover:bg-red-100 transition-colors duration-200"
                     >
                       {/*<TrashIcon className="w-5 h-5" />*/}
-                      <span className="text-sm">Eliminar</span>
+                      <span className="text-sm">Eliminar1</span>
                     </button>
                   </div>
                 </div>
@@ -167,7 +169,7 @@ const GestionProductos = () => {
                 onClick={handleEliminar}
                 className="flex-1 px-4 py-2.5 bg-red-600 text-white rounded-md font-semibold hover:bg-red-700 transition-colors duration-200"
               >
-                Eliminar
+                Eliminar2
               </button>
             </div>
           </div>
