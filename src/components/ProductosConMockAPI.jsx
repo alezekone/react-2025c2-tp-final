@@ -45,16 +45,23 @@ const ProductosConMockAPI = () => {
             <ul>
                 {producto.map(producto => (
                     <li key={producto.id}>
-                        <p>{producto.nombre}: {producto.precio} pesos</p>
-                        <img src={producto.imagen}
-                             alt={producto.nombre}
-                             height={80}
-                             width={80} 
-                        />
-                        <p>Descripción: </p> 
-                        <p>{producto.descripcion}</p>
-                        <button onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
-                        <Link to={`/producto-completo/${producto.id}`}>Ver detalle</Link>
+                        <div className="Contenedor flex p-6 m-6 shadow-md rounded-xl outline outline-white/20">
+                            <div className="Seccion1 w-48 flex-none">
+                            <img src={producto.imagen}
+                                 alt={producto.nombre}
+                                 height={80}
+                                 width={80} 
+                            />
+                            </div>
+                            <div className="Seccion2 flex-1">
+                            <p>{producto.nombre} - $ {producto.precio}</p>
+                            <p>Descripción: {producto.descripcion}</p>
+                            </div>
+                            <div className="Seccion3 w-32 flex-none">
+                            <button onClick={() => agregarAlCarrito(producto)}>Agregar al carrito</button>
+                            <Link to={`/producto-completo/${producto.id}`}>Ver detalle</Link>
+                            </div>
+                        </div>
                     </li>
                 ))}
             </ul>
